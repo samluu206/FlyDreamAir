@@ -1,5 +1,6 @@
-// Utils utility file
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-export const utils = () => {
-  console.log("Utils utility");
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
 }
