@@ -1,11 +1,13 @@
-import React from 'react';
+import { cn } from "./utils";
 
-const Skeleton: React.FC = () => {
+function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <div>
-      Skeleton component
-    </div>
+    <div
+      data-slot="skeleton"
+      className={cn("bg-accent animate-pulse rounded-md", className)}
+      {...props}
+    />
   );
 }
 
-export default Skeleton;
+export { Skeleton };
