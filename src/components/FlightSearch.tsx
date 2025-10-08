@@ -7,7 +7,7 @@ import { Calendar } from "./ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { ArrowLeftRight, Calendar as CalendarIcon, Users } from "lucide-react";
-// Simple date formatting function instead of date-fns
+
 const formatDate = (date: Date) => {
   return date.toLocaleDateString('en-US', { 
     weekday: 'short', 
