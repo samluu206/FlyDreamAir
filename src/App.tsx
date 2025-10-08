@@ -131,7 +131,6 @@ export default function App() {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 rounded-3xl"></div>
-              {/* dùng stub thay cho import thật */}
               <FlightSearch onSearch={handleSearch} />
             </div>
           </div>
