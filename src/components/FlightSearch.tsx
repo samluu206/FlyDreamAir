@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Calendar } from "./ui/calendar";
@@ -53,19 +52,19 @@ export function FlightSearch({ onSearch }: FlightSearchProps) {
 
   return (
     <Card className="w-full max-w-5xl mx-auto border-0 shadow-2xl bg-card/50 backdrop-blur-sm">
-      <CardHeader className="pb-8">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-2xl font-bold flex items-center gap-3">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <CalendarIcon className="h-5 w-5 text-primary" />
+      <CardHeader className="pb-6 sm:pb-8 px-4 sm:px-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <CardTitle className="text-xl sm:text-2xl font-bold flex items-center gap-2 sm:gap-3">
+            <div className="p-1.5 sm:p-2 bg-primary/10 rounded-lg">
+              <CalendarIcon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
             </div>
             Search Flights
           </CardTitle>
-          <div className="flex gap-2 p-1 bg-muted/50 rounded-xl">
+          <div className="flex gap-2 p-1 bg-muted/50 rounded-xl w-full sm:w-auto">
             <Button
               variant={tripType === "round-trip" ? "default" : "ghost"}
               onClick={() => setTripType("round-trip")}
-              className="rounded-lg font-medium"
+              className="rounded-lg font-medium flex-1 sm:flex-none text-sm sm:text-base"
               size="sm"
             >
               Round Trip
@@ -73,7 +72,7 @@ export function FlightSearch({ onSearch }: FlightSearchProps) {
             <Button
               variant={tripType === "one-way" ? "default" : "ghost"}
               onClick={() => setTripType("one-way")}
-              className="rounded-lg font-medium"
+              className="rounded-lg font-medium flex-1 sm:flex-none text-sm sm:text-base"
               size="sm"
             >
               One Way
@@ -81,10 +80,10 @@ export function FlightSearch({ onSearch }: FlightSearchProps) {
           </div>
         </div>
       </CardHeader>
-      <CardContent className="space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-end">
+      <CardContent className="space-y-6 sm:space-y-8 px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 items-end">
           {/* Route Section with modern design */}
-          <div className="lg:col-span-2 space-y-3">
+          <div className="sm:col-span-2 lg:col-span-2 space-y-3">
             <Label className="text-sm font-semibold text-foreground/80">Route</Label>
             <div className="flex items-center gap-3 p-4 bg-muted/30 rounded-2xl border border-border/50">
               <div className="flex-1">
@@ -163,13 +162,13 @@ export function FlightSearch({ onSearch }: FlightSearchProps) {
                   variant="outline"
                   className="w-full justify-start text-left font-normal bg-muted/30 border-border/50 rounded-xl h-12"
                 >
-                  <CalendarIcon className="mr-3 h-4 w-4 text-primary" />
-                  <div className="flex flex-col items-start">
-                    <span className="font-medium">
+                  <CalendarIcon className="mr-2 sm:mr-3 h-4 w-4 text-primary flex-shrink-0" />
+                  <div className="flex flex-col items-start overflow-hidden">
+                    <span className="font-medium text-sm sm:text-base truncate w-full">
                       {departDate ? formatDate(departDate) : "Select date"}
                     </span>
                     {!departDate && (
-                      <span className="text-xs text-muted-foreground">Choose departure</span>
+                      <span className="text-xs text-muted-foreground hidden sm:block">Choose departure</span>
                     )}
                   </div>
                 </Button>
@@ -198,13 +197,13 @@ export function FlightSearch({ onSearch }: FlightSearchProps) {
                     variant="outline"
                     className="w-full justify-start text-left font-normal bg-muted/30 border-border/50 rounded-xl h-12"
                   >
-                    <CalendarIcon className="mr-3 h-4 w-4 text-primary" />
-                    <div className="flex flex-col items-start">
-                      <span className="font-medium">
+                    <CalendarIcon className="mr-2 sm:mr-3 h-4 w-4 text-primary flex-shrink-0" />
+                    <div className="flex flex-col items-start overflow-hidden">
+                      <span className="font-medium text-sm sm:text-base truncate w-full">
                         {returnDate ? formatDate(returnDate) : "Select date"}
                       </span>
                       {!returnDate && (
-                        <span className="text-xs text-muted-foreground">Choose return</span>
+                        <span className="text-xs text-muted-foreground hidden sm:block">Choose return</span>
                       )}
                     </div>
                   </Button>
@@ -222,15 +221,15 @@ export function FlightSearch({ onSearch }: FlightSearchProps) {
           )}
         </div>
 
-        <div className="pt-4">
+        <div className="pt-2 sm:pt-4">
           <Button
             onClick={handleSearch}
             size="lg"
-            className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-200 rounded-2xl"
+            className="w-full h-12 sm:h-14 text-base sm:text-lg font-semibold bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-lg hover:shadow-xl transition-all duration-200 rounded-2xl"
             disabled={!from || !to || !departDate || (tripType === "round-trip" && !returnDate)}
           >
-            <div className="flex items-center gap-3">
-              <CalendarIcon className="h-5 w-5" />
+            <div className="flex items-center gap-2 sm:gap-3">
+              <CalendarIcon className="h-4 w-4 sm:h-5 sm:w-5" />
               Search Flights
             </div>
           </Button>

@@ -112,7 +112,7 @@ export function MyTrips({ onNewSearch }: MyTripsProps) {
   const handleSearch = () => {
     const reference = bookingReference.toUpperCase().trim();
     const name = lastName.trim();
-    
+
     if (reference === "" || name === "") {
       setError("Please enter both booking reference and last name");
       setSearchedTrip(null);
@@ -125,7 +125,7 @@ export function MyTrips({ onNewSearch }: MyTripsProps) {
       { reference: "VA123", lastName: "Luu" }
     ];
 
-    const isValidPair = validPairs.some(pair => 
+    const isValidPair = validPairs.some(pair =>
       pair.reference === reference && pair.lastName.toLowerCase() === name.toLowerCase()
     );
 
@@ -137,11 +137,6 @@ export function MyTrips({ onNewSearch }: MyTripsProps) {
       setSearchedTrip(null);
       setError("Invalid booking reference or last name. Please try again.");
     }
-  };
-
-  const handleReferenceSelect = (reference: string) => {
-    setBookingReference(reference);
-    setError("");
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

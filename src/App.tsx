@@ -85,18 +85,18 @@
           currentPage={getCurrentPage()}
         />
   
-        <main className="container mx-auto px-6 py-12 max-w-6xl">
+        <main className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-6xl">
           {currentState === "search" && (
-            <div className="space-y-12">
-              <div className="text-center space-y-6 pt-8">
-                <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary/5 border border-primary/20 rounded-full text-primary font-medium">
-                  <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+            <div className="space-y-8 sm:space-y-12">
+              <div className="text-center space-y-4 sm:space-y-6 pt-4 sm:pt-8">
+                <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/5 border border-primary/20 rounded-full text-primary font-medium text-sm sm:text-base">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-pulse"></div>
                   Book with confidence
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
+                <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight px-4">
                   Fly to your dream with FlyDreamAir
                 </h2>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4">
                   Your trusted partner for finding flights,
                   comparing fares, and traveling stress-free.
                 </p>

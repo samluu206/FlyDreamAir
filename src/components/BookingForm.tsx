@@ -82,25 +82,25 @@ export function BookingForm({ flight, searchData, onBack, onBooking }: BookingFo
 
   return (
     <div className="w-full max-w-6xl mx-auto">
-      <div className="mb-6">
-        <Button variant="ghost" onClick={onBack} className="mb-4">
+      <div className="mb-4 sm:mb-6">
+        <Button variant="ghost" onClick={onBack} className="mb-4 text-sm sm:text-base">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Search Results
         </Button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Booking Form */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-4 sm:space-y-6">
           {/* Passenger Information */}
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <User className="h-5 w-5" />
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                <User className="h-4 w-4 sm:h-5 sm:w-5" />
                 Passenger Information
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 px-4 sm:px-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="firstName">First Name *</Label>
@@ -179,13 +179,13 @@ export function BookingForm({ flight, searchData, onBack, onBooking }: BookingFo
 
           {/* Payment Information */}
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <CreditCard className="h-5 w-5" />
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
+                <CreditCard className="h-4 w-4 sm:h-5 sm:w-5" />
                 Payment Information
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 px-4 sm:px-6">
               <div className="space-y-2">
                 <Label htmlFor="nameOnCard">Name on Card *</Label>
                 <Input
@@ -273,7 +273,7 @@ export function BookingForm({ flight, searchData, onBack, onBooking }: BookingFo
 
           {/* Terms and Conditions */}
           <Card>
-            <CardContent className="p-6">
+            <CardContent className="p-4 sm:p-6">
               <div className="flex items-start space-x-2">
                 <Checkbox 
                   id="terms"
@@ -295,11 +295,11 @@ export function BookingForm({ flight, searchData, onBack, onBooking }: BookingFo
 
         {/* Booking Summary */}
         <div className="lg:col-span-1">
-          <Card className="sticky top-4">
-            <CardHeader>
-              <CardTitle>Booking Summary</CardTitle>
+          <Card className="lg:sticky lg:top-20">
+            <CardHeader className="px-4 sm:px-6">
+              <CardTitle className="text-lg sm:text-xl">Booking Summary</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 px-4 sm:px-6">
               {/* Flight Details */}
               <div className="space-y-4">
                 {/* Outbound Flight */}
